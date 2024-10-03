@@ -3,13 +3,164 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Sass Boilerplate</title>
-    <script type="module" src="main.js" defer></script>
-  </head>
-  <body>
-    <main class="container">
-      <h1>Hello, Sass!</h1>
-      <p>This is a simple example of using Sass with HTML.</p>
-    </main>
-  </body>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./reset.css">
+    <script type="module" src="script.js" defer></script>
+    <title>frontendmentor | FAQ card</title>
+</head>
+<body>
+    <section class="faq">
+
+        <section class="image-wrapping">
+            <div class="main-image-wrapping">
+                <picture class="woman-standing-wrapping">
+                    <source media="(min-width: 1109px)" srcset="./assets/images/illustration-woman-online-desktop.svg">
+                    <source media="(max-width: 1109px)" srcset="./assets/images/illustration-woman-online-mobile.svg" id="mobile-image">
+                    <img src="./assets/images/illustration-woman-online-desktop.svg" alt="woman standing in front of screen" >
+                </picture>
+    
+                <picture class="shadow-image-wrapping">
+                    <source media="(min-width: 1109px)" srcset="./assets/images/bg-pattern-desktop.svg">
+                    <source media="(max-width: 1109px)" srcset="./assets/images/bg-pattern-mobile.svg">
+                    <img src="./assets/images/bg-pattern-desktop.svg" alt="shadow of image">
+                </picture>
+            </div>
+            <img src="./assets/images/illustration-box-desktop.svg" alt="box ilustration" class="image-box">
+        </section>
+        
+        <section class="text-container">
+            <h2 class="heading">FAQ</h2>
+            <div class="item-text-container">
+                <ul class="list">
+                    <li class="item">
+                        <section class="item-summary">
+                            <p class="question">
+                                How many team members can I invite?
+                            </p>
+                            <div class="arrow-wrap">
+                                <img src="./assets/images/icon-arrow-down.svg" alt="" class="arrow">
+                            </div>
+                        </section>
+                        <section class="detail">
+                            You can invite up to 2 additional users on the Free plan. There is no limit on 
+                            team members for the Premium plan.
+                        </section>
+                    </li>
+                </ul>
+
+                <ul class="list">
+                    <li class="item">
+                        <section class="item-summary">
+                            <p class="question">
+                                What is the maximum file upload size? 
+                            </p>
+                            <div class="arrow-wrap">
+                                <img src="./assets/images/icon-arrow-down.svg" alt="" class="arrow">
+                            </div>
+                        </section>
+                        <section class="detail">
+                            No more than 2GB. All files in your account must fit your allotted storage space.
+                        </section>
+                    </li>
+                </ul>
+                
+                <ul class="list">
+                    <li class="item">
+                        <section class="item-summary">
+                            <p class="question">
+                                How do I reset my password?
+                            </p>
+                            <div class="arrow-wrap">
+                                <img src="./assets/images/icon-arrow-down.svg" alt="" class="arrow">
+                            </div>
+                        </section>
+                        <section class="detail">
+                            Click “Forgot password” from the login page or “Change password” from your profile page.
+                            A reset link will be emailed to you. It
+                        </section>
+                    </li>
+                </ul>
+
+                <ul class="list">
+                    <li class="item">
+                        <section class="item-summary">
+                            <p class="question">
+                                Can I cancel my subscription?
+                            </p>
+                            <div class="arrow-wrap">
+                                <img src="./assets/images/icon-arrow-down.svg" alt="" class="arrow">
+                            </div>
+                        </section>
+                        <section class="detail">
+                            Yes! Send us a message and we’ll process your request no questions asked.
+                        </section>
+                    </li>
+                </ul>
+
+                <ul class="list">
+                    <li class="item">
+                        <section class="item-summary">
+                            <p class="question">
+                                Do you provide additional support?
+                            </p>
+                            <div class="arrow-wrap">
+                                <img src="./assets/images/icon-arrow-down.svg" alt="" class="arrow">
+                            </div>
+                        </section>
+                        <section class="detail">
+                            Chat and email support is available 24/7. Phone lines are open during normal business hours.
+                        </section>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="form">
+                <form action="">
+                    <p>send me your questions below, we will answer your question quickly</p>
+                    <div class="name-wrap">
+                        <img src="./assets/icon/icons8-person-30.png" alt="" >
+                        <input type="text" id="name" required autocomplete="off">
+                        <label for="name">name</label>
+                        <img src="./assets/icon/icons8-checkmark.svg" alt="">
+                    </div>
+                    
+                    <div class="email-wrap">
+                        <img src="./assets/icon/icons8-mail-48.png" alt="">
+                        <input type="email" id="email" required autocomplete="off">
+                        <label for="email">email</label>
+                        <p class="error">please fill correct email</p>
+                        <img src="./assets/icon/icons8-checkmark.svg" alt="">
+                    </div>
+
+                    <div class="comments-wrap">
+                        <img src="./assets/icon/icons8-question-mark-64.png" alt="">
+                        <input type="text" id="area" required autocomplete="off">
+                        <label for="area">question</label>
+                        <img src="./assets/icon/icons8-checkmark.svg" alt="">
+                    </div>
+                    <div class="button">
+                        <button type="reset">reset</button>
+                        <button type="submit">submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <span id="aks">still get confusing?</span>
+        </section>
+    </section>
+
+    <section class="thanks">
+        <div class="image">
+            <img src="./assets/icon/stripy-180-hd.png" alt="" width="100">
+        </div>
+        <div class="text">
+            <img src="./assets/images/illustration-woman-online-mobile.svg" alt="">
+            <span>- submited 1 sec ago</span>
+            <p>thank you <span class="name"></span> for asked ,wi'll send our answer to <span class="mail"></span> sooner</p>
+            <br>
+        </div>
+    </section>
+
+</body>
 </html>

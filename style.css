@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+/* @import url('./reset.css'); */
+:root{
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    --background : linear-gradient(to bottom, hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+    --Light-grayish-blue: hsl(240, 5%, 91%); 
+
+    --font-size-heading : 7.2rem;
+    --font-size-description : clamp(1.3rem, 1.2545rem + 0.1212vw, 1.4rem);
+
+    --z-index-main :10;
+    --z-index-secondary :5;
+    --z-index-lowest : 1;
+    overflow-x: hidden;
+
+}
+
+
+body{
+    width: 100%;
+    min-height: 135vh;
+    display: grid;
+    place-items: center;
+    background-image: var(--background);
+    background-repeat: no-repeat;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+            /* setting up the container faq */
+
+.faq {
+    background-color: white;
+    border-radius: 2.3rem;
+    display: grid;
+    grid: 10.4rem max-content / 1fr ;
+    gap: 2.8rem;
+    width: 90%;
+    max-width: 60rem;
+    transition: width 250ms;
+    /* display: none; */
+
+}
+
+@media screen and (min-width: 1110px) {
+
+    .faq{
+        background-color: white;
+        grid: 1fr / 38.8rem 1fr;
+        gap:8.7rem;
+        max-width: 92rem;
+        min-height: 50.9rem;
+    }
+    
+}
+
+    /* setting a image container both of device  */
+
+    .image-wrapping{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    grid: "image-container" 1fr / 1fr;
+
+}
+.main-image-wrapping{
+    /* width: 100%; */
+    height: 100%;
+    display: grid;
+    grid-area: image-container;
+    place-items: center;
+    grid-area: "images" 1fr / 1fr;
+}
+@media screen and (min-width: 1110px){
+    .main-image-wrapping{
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.main-image-wrapping > picture {
+    grid-area: images;
+}
+
+            /* setting images of faq card */
+
+.woman-standing-wrapping img{
+    width: 23.685rem;
+    height: auto;
+    transform: translate(0, -10.8rem);
+    position: relative;
+    z-index: var(--z-index-secondary);
+
+}
+@media screen and (min-width: 1110px){
+    .woman-standing-wrapping img{
+        width: 42.2rem;
+        transform: translate(-8.5rem, 0);
+    }
+}
+
+            /* setting shadow of image */
+
+.shadow-image-wrapping img{
+    transform: translate(0, -3.7rem);
+    width: 23.685;
+    z-index: var(--z-index-lowest);
+}
+@media screen and (min-width: 1110px){
+
+    .shadow-image-wrapping img{
+        position: absolute;
+        width: 96.4rem;
+        right: 80px;
+        top: 50%;
+        transform: translate(0, -55%);
+    }
+}
+
+          /* setting image of box in device dekstop */
+
+.image-box{
+    display: none;
+    grid-area: image-container;
+    z-index: var(--z-index-main);
+}
+@media screen and (min-width: 1110px){
+    .image-box{
+        display: block;
+        transform: translate(-20rem,11rem);
+    }
+}
+
+                        /* TEXT SECTION  */
+
+        /*  setting text container and header of faq card */
+
+.text-container {
+    
+    padding: 0 2.4rem 4.8rem;
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+}
+/* .text-container .item-text-container{
+    display: none;
+} */
+.text-container .heading{
+    align-self: center;
+    gap: 3.8rem;
+    /* font-size: var(--font-size-heading); */
+    font-size: 3.7rem;
+    color: var(--Very-dark-desaturated-blue
+    );
+    font-weight: 700;
+    
+}
+@media screen and (min-width: 1110px){
+    
+    .text-container{
+        width: 90%;
+        padding: 2.5rem 1.5rem 5rem 0;
+        align-items: flex-start;
+    }
+    .text-container .heading{
+        gap: 1rem;
+    }
+
+}
+
+                /* setting list of drop down faq (ul)*/
+
+ul.list{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.9rem;
+}
+li.item{
+    border-bottom: 1px solid var(--Light-grayish-blue);
+    cursor: pointer;
+    padding: 0 0 1.8rem;
+    transition: all .4s ease;
+}
+section.detail{
+    max-height: 0;
+    overflow: hidden;
+}
+
+section.item-summary{
+
+    font-size: var(--font-size-description);
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.5rem;
+    transition: font-weight 250ms;
+}
+li.item:hover section.item-summary{
+    color: var(--Soft-red);
+}
+li.item:is(.active) > section.item-summary{
+    font-weight: 700;
+}
+img.arrow{
+    transition: 250ms;
+}
+li.item:is(.active) > .item-summary .arrow-wrap img.arrow{
+    transform: rotate(180deg);
+}
+
+
+
+section.detail{
+    overflow: hidden;
+    font-size: var(--font-size-description);
+    line-height: 1.8rem;
+    transition: max-height 650ms ease, margin-top 650ms;
+    color: var(--Dark-grayish-blue);
+    max-height: 0;
+    padding-right: 2.8rem;
+
+}
+
+li.item:is(.active) > .item-summary section.detail{
+    margin-top: 1.1rem;
+    
+}
+
+        /* setting up scrollbar style */
+
+@media screen and (min-width: 1110px){
+    body{min-height: 100vh;}
+    .text-container .item-text-container{
+        overflow-y: auto;
+        height: 33rem;
+         /* display: none; */
+
+    }
+    .text-container .item-text-container::-webkit-scrollbar{
+        width: .3rem;
+    }
+    .text-container .item-text-container::-webkit-scrollbar-track{
+        background-color: #eaeaea;
+        border-radius: 1rem;
+
+    }
+    .text-container .item-text-container::-webkit-scrollbar-thumb{
+        background-color: rgb(206, 206, 206);
+        transition: all 250ms ease;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+    .text-container .item-text-container::-webkit-scrollbar-thumb:hover{
+        background-color: rgb(190, 190, 190);
+
+    }
+    
+}
+
+        /* setting aks section */
+#aks{
+    
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
+    color: black;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    cursor: pointer;
+
+}
+#aks:hover{
+    color: blue;
+}
+
+#form p:first-child{
+    font-size: var(--font-size-description);
+    color: var(--Very-dark-desaturated-blue);
+    font-weight: 500;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+                    /* setting form */
+        
+#form{
+    
+    display:none;
+    
+}
+#form form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* position: relative; */
+    font-family: 'Kumbh Sans', sans-serif;
+    
+}
+
+#form div{
+    position: relative;
+
+    width: 98%;
+}
+#form div label{
+    display: block;
+    position: absolute;
+}
+#form div input:focus{
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+#form div input{
+    padding: 1.3rem 4rem 1.3rem 3.5rem;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: .8rem;
+    width: 78%;
+
+}
+
+#form div label{
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    background-color: white;
+    top: 1.1rem;
+    padding: .2rem .4rem;
+    left: 3.4rem;
+    transition: all .4s ease;
+    color: grey;
+}
+#form div input:focus + label, #form div input:valid + label{
+    transform: translate(-.4rem,-1.7rem);
+    font-size: 1rem;
+    color: black;
+}
+#form div input:valid ~ img:last-child{
+    opacity: 1;
+}
+#form div input:valid{
+    color: green ;
+}
+#form div img:first-child{
+    position: absolute;  
+    width: 2.5rem;
+    left: .5rem;
+    top: .8rem;
+    
+}
+#form div img:last-child{
+    position: absolute;
+    width: 2.5rem;
+    right: .2rem;
+    top: 1rem;
+    opacity: 0;
+
+}
+
+#form .email-wrap p{
+    font-size: 1.1rem;
+    margin: .2rem 2rem;
+    color: red;
+    opacity: 0;
+}
+#form .email-wrap input{
+    text-transform: none;
+}
+#form .email-wrap input:focus:invalid ~ p{
+    opacity: 1;
+}
+
+#form .button{
+    margin-top: 3rem;
+    display: flex;
+    gap: 3rem;
+    justify-content: flex-end;
+}
+#form .button button{
+    background-color: violet;
+    padding: .6rem 2rem;
+    font-size: var(--font-size-description);
+    border: none;
+    border-radius: .6rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+#form .button button:hover{
+    box-shadow: 0 4px 19px -6px rgba(0, 0, 0, .3);  
+
+}
+
+@media screen and (min-width: 1110px){
+    #form div img:last-child{
+        right: 2rem;
+    }
+   
+}
+
+
+    /* section sending email (thank you) */
+
+.thanks {
+
+    background-color: whitesmoke;
+    position: absolute;
+    z-index: 100;
+    place-self: start end;
+    visibility: hidden;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    max-width: 30rem;
+    padding: 1rem ;
+    border-radius: 1rem;
+
+    transition: all .4s ease;
+
+    /* animation: showing 1.2s 1 forwards .6s,
+                hide 1.2s 1 forwards 4.2s; */
+
+}
+
+.thanks .image img{
+    width: 6rem;
+    margin-left: 2rem;
+    float: right;
+    
+}
+.thanks .text{order: 1;}
+.thanks .image{order: 2;}
+.thanks .text p{
+   
+    margin-left: 2rem;
+    font-size: 1.25rem;
+}
+.thanks .text h3{
+    font-size: 2rem;
+
+}
+.thanks .text img{
+    width: 2.9rem;
+    margin-right: 1rem;
+    transform: translateX(-2rem);
+
+}
+.thanks .text img + span{
+    display: inline-block;
+    transform: translate(-2rem,-.7rem);
+}
+
+@keyframes showing {
+    to{
+    transform: scale(1.06);
+      visibility: visible;
+    }
+}
+@keyframes hide {
+    to{
+        transform: scale(.001) ;
+        visibility: hidden;
+    }
+    
+}
+
+
+
+
+
